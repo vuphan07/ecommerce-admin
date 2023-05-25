@@ -21,7 +21,7 @@ const queryConfig: DefaultOptions = {
 };
 
 const queryClient = new QueryClient({ defaultOptions: queryConfig });
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: any) {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>

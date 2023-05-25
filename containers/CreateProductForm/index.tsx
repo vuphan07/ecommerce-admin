@@ -21,7 +21,7 @@ function CreateProductForm({ defaultValues, loading: defaultLoading = false }) {
     setIsLoading(true);
     Promise.all(fileWithoutUploaded.map((file) => upload(file.originFileObj)))
       .then((response) => {
-        const images = response.map((image) => image.data);
+        const images = response.map((image:any) => image.data);
         const originalDataCreate = {
           ...dataCreate,
           sold: dataCreate.sold ?? 0,
