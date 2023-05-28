@@ -5,12 +5,13 @@ export type QuerySubcriptions = {
   limit?: number;
   searchKey?: string;
   page?: number;
+  status?: string;
 };
 
 const useQueryOrders = (defaultFilter: QuerySubcriptions = { limit: 10, page: 1 }) => {
-  const { searchKey, ...filters } = defaultFilter;
+  const { searchKey, status, ...filters } = defaultFilter;
   const query = async (filter) =>
-    await http.get(`/api/orders?name[regex]=${searchKey}`, {
+    await http.get(`/api/orders/all?name[regex]=${searchKey || ''}&status[eq]=${status || ''}`, {
       params: filters,
     });
 

@@ -21,7 +21,7 @@ const useLazyQueryListMember = (
     try {
       setLoading(true);
       const { searchKey, status, ...filters } = filter;
-      const result = await http.get(`/api/users?email[regex]=${searchKey}&status[eq]=${status}`, {
+      const result = await http.get(`/api/users?email[regex]=${searchKey}&status[eq]=${status ||""}`, {
         params: filters,
       });
       setData((result as any)?.data || []);
