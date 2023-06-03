@@ -1,6 +1,5 @@
 import axios from 'axios';
-const baseURL = `https://35.78.118.153:5000`;
-// const baseURL = `http://10.0.19.66:5000`;
+const baseURL = `https://be.shopdee.click`;
 
 const http = axios.create({
   method: 'post', // default
